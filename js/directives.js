@@ -3,7 +3,8 @@ app.directive("ivyTeaInfo", function(){
     restrict: "A",
     templateUrl: "templates/teaInfo.html",
     scope: {
-      tea: "="
+      tea: "=",
+      qty: "="
     }
   };
 });

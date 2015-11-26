@@ -12,3 +12,7 @@
     <li ng-repeat="category in tea.categories track by $index">{{category}}</li>
   </ul>
 </td>
+<td id="qtyCol">
+  <select ng-model="tea.qty" ng-options="q for q in qty" ng-init="tea.qty = qty[0]"></select>
+  <button ng-click="addToBag($index, tea.qty)" class="btn btn-warning">Add to Bag</button>
+</td>

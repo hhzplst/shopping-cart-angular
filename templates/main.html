@@ -21,9 +21,10 @@
           </select>          
         </div>
       </th>
+      <th>Quantity</th>
     </thead>
     <tbody>
-      <tr ivy-tea-info ng-repeat="tea in teas | filter:search.category:strict | filter:search.name:strict | orderBy:sort.price track by $index" tea="tea"></tr>     
+      <tr ivy-tea-info ng-repeat="tea in teas | filter:search.category:strict | filter:search.name:strict | orderBy:sort.price track by $index" tea="tea" qty="qty"></tr>     
     </tbody>
   </table>
 </div>
