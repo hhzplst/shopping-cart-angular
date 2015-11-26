@@ -12,10 +12,18 @@
   <table class="table table-bordered">
     <thead>
       <th>Tea</th>
-      <th>Information</th>
+      <th>Information
+        <div id="sort" class="pull-right">
+          <strong>Sort by Price</strong>
+          <select ng-model="sort.price">
+            <option value="-price">High to Low</option>
+            <option value="price">Low to High</option>
+          </select>          
+        </div>
+      </th>
     </thead>
     <tbody>
-      <tr ivy-tea-info ng-repeat="tea in teas | filter:search.category:strict | filter:search.name:strict track by $index" tea="tea"></tr>      
+      <tr ivy-tea-info ng-repeat="tea in teas | filter:search.category:strict | filter:search.name:strict | orderBy:sort.price track by $index" tea="tea"></tr>     
     </tbody>
   </table>
 </div>
