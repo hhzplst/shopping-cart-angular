@@ -2,7 +2,7 @@
 
 <div id="search">
   <strong>Search by Category&nbsp;&nbsp;</strong><select ng-model="search.category" ng-options="category for category in teas | flatten">
-  </select>
+  </select>&nbsp;&nbsp;
 
   <strong>Search by Name&nbsp;&nbsp;</strong><input ng-model="search.name">
   </input>
@@ -15,7 +15,7 @@
       <th>Information</th>
     </thead>
     <tbody>
-      <tr ivy-tea-info ng-repeat="tea in teas track by $index" tea="tea"></tr>      
+      <tr ivy-tea-info ng-repeat="tea in teas | filter:search.category:strict | filter:search.name:strict track by $index" tea="tea"></tr>      
     </tbody>
   </table>
 </div>
