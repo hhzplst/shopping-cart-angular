@@ -7,8 +7,8 @@
   <span ng-repeat="ingredient in tea.ingredients track by $index">{{ingredient}}</span><br><br>
   <strong>Rating: </strong>{{tea.rating}} <br><br>
   <strong>In Stock? </strong>{{tea.inStock}} <br><br>
-  <strong>Categories: </strong> <br><br>
+  <strong>Categories: </strong> <br>
   <ul>
-    <li ng-repeat="data.category in tea.categories track by $index">{{data.category}}</li>
+    <li ng-repeat="category in tea.categories track by $index">{{category}}</li>
   </ul>
 </td>
