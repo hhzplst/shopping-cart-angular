@@ -4,7 +4,10 @@ app.directive("ivyTeaInfo", function(){
     templateUrl: "templates/teaInfo.html",
     scope: {
       tea: "=",
-      qty: "="
+      qty: "=",
+      index: "@",
+      count: "@",
+      addToBag: "&"
     }
   };
 });

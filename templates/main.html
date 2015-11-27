@@ -6,7 +6,10 @@
 
   <strong>Search by Name&nbsp;&nbsp;</strong><input ng-model="search.name">
   </input>
+
+  <button class="pull-right btn btn-danger" ng-click="checkout()">Checkout | Bag: {{summary.count}}</button>
 </div>
+
 
 
   <table class="table table-bordered">
@@ -24,7 +27,7 @@
       <th>Quantity</th>
     </thead>
     <tbody>
-      <tr ivy-tea-info ng-repeat="tea in teas | filter:search.category:strict | filter:search.name:strict | orderBy:sort.price track by $index" tea="tea" qty="qty"></tr>     
+      <tr ivy-tea-info ng-repeat="tea in teas | filter:search.category:strict | filter:search.name:strict | orderBy:sort.price track by $index" tea="tea" qty="qty" index="{{$index}}" count="{{summary.count}}" add-to-bag="addToBag(index,qty)"></tr>
     </tbody>
   </table>
 </div>

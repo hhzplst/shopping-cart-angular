@@ -1,5 +1,4 @@
-app.service("mainService", function(){
-
+app.service("mainService", function($location){
   var teas = [
     {
         _id: "55c8ee82152165d244b98300",
@@ -124,11 +123,51 @@ app.service("mainService", function(){
     }
   ];
 
+  var buy = [];
+  var totalCount = 0;
+
   return{
     allTea: function(){
       return teas;
+    },
+    addToBag: function(index, qty){
+      totalCount += parseInt(qty);
+      return totalCount;
+    },
+    checkout: function(){
+      $location.path("/checkout");
     }
   } ;
 
   
 });
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
