@@ -1,0 +1,30 @@
+<div class="col-md-8 col-md-offset-2">
+<table class="table table-bordered" id="checkoutTable">
+  <thead>
+    <th>Tea</th>
+    <th>Information</th>
+    <th>Quantity</th>
+    <th>Subtotal</th>
+  </thead>
+  <tbody>
+    <tr ng-repeat="buyItem in buy">
+      <td><img ng-src="{{buyItem.info.imageUrl}}" alt="{{buyItem.info.name}}"></td>
+      <td>
+        <h3>{{buyItem.info.name}}</h3><hr>
+        <strong>Price: </strong>{{buyItem.info.price | currency}} <br>
+        <strong>Caffeine Scale: </strong>{{buyItem.info.caffeineScale}}
+      </td>
+      <td>
+        <strong>{{buyItem.qty}}</strong>
+      </td>
+      <td>
+        <strong>{{buyItem.info.price * buyItem.qty | currency}}</strong>
+      </td>
+    </tr>
+    <!-- <td id="qtyCol">
+      <select ng-model="tea.qty" ng-options="q for q in qty" ng-init="tea.qty = qty[0]"></select>
+      <button ng-click="addToBag({index:index,qty:tea.qty})" class="btn btn-warning">Add to Bag</button>
+    </td> -->
+  </tbody>
+</table>
+</div>

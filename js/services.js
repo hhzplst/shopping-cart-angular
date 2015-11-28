@@ -132,10 +132,14 @@ app.service("mainService", function($location){
     },
     addToBag: function(index, qty){
       totalCount += parseInt(qty);
+      buy.push({info: teas[index], qty: qty});
       return totalCount;
     },
     checkout: function(){
       $location.path("/checkout");
+    },
+    boughtItem: function(){
+        return buy;
     }
   } ;
 

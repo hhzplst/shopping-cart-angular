@@ -5,3 +5,8 @@
 #qtyCol{
   padding: 140px;
 }
+
+#checkoutTable tr td{
+  text-align: center;
+  vertical-align: middle;
+}

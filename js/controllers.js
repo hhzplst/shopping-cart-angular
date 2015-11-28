@@ -14,6 +14,7 @@ app.controller("MainController", function($scope, mainService, $location){
 });
 
 app.controller("CheckoutController", function($scope, mainService){
-
+    console.log("in controller");
+    $scope.buy = mainService.boughtItem();
 });
 
