@@ -125,6 +125,7 @@ app.service("mainService", function($location){
 
   var buy = [];
   var totalCount = 0;
+  var total;
 
   return{
     allTea: function(){
@@ -139,11 +140,22 @@ app.service("mainService", function($location){
       $location.path("/checkout");
     },
     boughtItem: function(){
-        return buy;
+      return buy;
+    },
+    getTotal: function(){
+      total = 0;
+      buy.map(function(el){
+        total += parseInt(el.qty) * el.info.price;
+      });
+      return total;
+    },
+    editQty: function(qty, index){
+        buy[index].qty = qty;
+    },
+    removeItem: function(index){
+        buy.splice(index, 1);
     }
   } ;
-
-  
 });
 
 

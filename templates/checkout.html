@@ -5,9 +5,10 @@
     <th>Information</th>
     <th>Quantity</th>
     <th>Subtotal</th>
+    <th>Remove</th>
   </thead>
   <tbody>
-    <tr ng-repeat="buyItem in buy">
+    <tr ng-repeat="buyItem in buy track by $index">
       <td><img ng-src="{{buyItem.info.imageUrl}}" alt="{{buyItem.info.name}}"></td>
       <td>
         <h3>{{buyItem.info.name}}</h3><hr>
@@ -16,15 +17,23 @@
       </td>
       <td>
         <strong>{{buyItem.qty}}</strong>
+        <div class="editForm center-block"><u ng-click="toggleEditForm(buyItem)">Edit</u>
+          <form ng-submit="editQty(item.qty, $index)" name="editForm" ng-show="buyItem.editForm">
+            <input type="text" ng-model="item.qty" class="form-control">
+            <input type="submit" class="btn btn-info form-control" >
+          </form>
+        </div>
       </td>
       <td>
         <strong>{{buyItem.info.price * buyItem.qty | currency}}</strong>
       </td>
+      <td>
+        <button ng-click="removeItem($index)" class="btn btn-danger">X</button>
+      </td>
     </tr>
-    <!-- <td id="qtyCol">
-      <select ng-model="tea.qty" ng-options="q for q in qty" ng-init="tea.qty = qty[0]"></select>
-      <button ng-click="addToBag({index:index,qty:tea.qty})" class="btn btn-warning">Add to Bag</button>
-    </td> -->
   </tbody>
 </table>
+<br><br>
+<hr>
+<h3 class="pull-right">Total: {{getTotal() | currency}} </h3>
 </div>

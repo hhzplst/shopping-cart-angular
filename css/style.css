@@ -6,7 +6,11 @@
   padding: 140px;
 }
 
-#checkoutTable tr td{
+#checkoutTable td{
   text-align: center;
   vertical-align: middle;
+}
+
+.editForm {
+  width: 50%;
 }

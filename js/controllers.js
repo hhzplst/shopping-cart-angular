@@ -14,7 +14,20 @@ app.controller("MainController", function($scope, mainService, $location){
 });
 
 app.controller("CheckoutController", function($scope, mainService){
-    console.log("in controller");
     $scope.buy = mainService.boughtItem();
+
+    $scope.getTotal = function(){
+        return mainService.getTotal();
+    };
+    $scope.toggleEditForm = function(item){
+        item.editForm = !item.editForm;
+    };
+    $scope.editQty = function(qty, index){
+        $scope.buy[index].editForm = false;
+        mainService.editQty(qty, index);
+    };
+    $scope.removeItem = function(index){
+        mainService.removeItem(index);
+    };
 });
 
