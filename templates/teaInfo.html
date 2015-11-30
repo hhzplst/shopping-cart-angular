@@ -1,8 +1,10 @@
-<td><img ng-src="{{tea.imageUrl}}" alt="{{tea.name}}"></td>
+<td><img ng-src="{{tea.imageUrl}}" alt="{{tea.name}}">
+<!-- <strong>Caffeine Scale: </strong>{{tea.caffeineScale}} -->
+<div caffeine-scale caffeinemg="{{tea.caffeineScale}}" id="tea._id"></div>
+</td>
 <td>
   <h3>{{tea.name}}</h3>
   <strong>Price: </strong>{{tea.price | currency}} <br><br>
-  <strong>Caffeine Scale: </strong>{{tea.caffeineScale}} <br><br>
   <strong>Ingredients: </strong>
   <span ng-repeat="ingredient in tea.ingredients track by $index">{{ingredient}}</span><br><br>
   <strong>Rating: </strong>{{tea.rating}} <br><br>
